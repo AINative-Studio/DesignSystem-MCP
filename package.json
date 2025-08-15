@@ -1,0 +1,89 @@
+{
+  "name": "ainative-design-system-mcp-server",
+  "version": "1.0.1",
+  "description": "AINative Design System MCP Server for Claude Code - Extract design tokens, analyze components, and generate themes",
+  "main": "build/index.js",
+  "type": "module",
+  "bin": {
+    "ainative-design-system-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node build/index.js",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build && npm test",
+    "postinstall": "echo '✅ AINative Design System MCP Server installed! Run: ainative-design-system-mcp'"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "design-system",
+    "design-tokens",
+    "ai",
+    "claude",
+    "claude-code",
+    "components",
+    "theming",
+    "css",
+    "scss",
+    "tailwind",
+    "styled-components",
+    "material-ui",
+    "accessibility",
+    "wcag",
+    "color-palette",
+    "typography",
+    "spacing"
+  ],
+  "author": {
+    "name": "AINative",
+    "email": "support@ainative.com",
+    "url": "https://ainative.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "fs-extra": "^11.1.1",
+    "yaml": "^2.3.4",
+    "chroma-js": "^2.4.2",
+    "css-tree": "^2.3.1",
+    "lodash": "^4.17.21",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/fs-extra": "^11.0.1",
+    "@types/lodash": "^4.14.202",
+    "@types/chroma-js": "^2.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "build/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AINative-Studio/DesignSystem-MCP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AINative-Studio/DesignSystem-MCP/issues"
+  },
+  "homepage": "https://github.com/AINative-Studio/DesignSystem-MCP#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
