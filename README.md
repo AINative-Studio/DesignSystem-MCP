@@ -378,9 +378,3 @@ npm run lint
 
 MIT License - see LICENSE file for details.
 
-## Support
-
-- 📧 Email: support@ainative.com
-- 🐛 Issues: [GitHub Issues](https://github.com/ainative/design-system-mcp-server/issues)
-- 📖 Documentation: [Full Documentation](https://docs.ainative.com/mcp/design-system)
-- 💬 Community: [Discord](https://discord.gg/ainative)
