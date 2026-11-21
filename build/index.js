@@ -9,6 +9,7 @@
  * Install: npm install -g ainative-design-system-mcp-server
  * Usage: ainative-design-system-mcp
  */
+import { createRequire } from 'module';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ErrorCode, ListResourcesRequestSchema, ListToolsRequestSchema, McpError, ReadResourceRequestSchema, } from '@modelcontextprotocol/sdk/types.js';
@@ -16,12 +17,14 @@ import { designSystemTools } from './tools/index.js';
 import { designSystemResources } from './resources.js';
 import { validateToolInput } from './utils/validation.js';
 import { logger } from './utils/logger.js';
+const require = createRequire(import.meta.url);
+const { version: PKG_VERSION } = require('../package.json');
 class DesignSystemServer {
     server;
     constructor() {
         this.server = new Server({
             name: 'ainative-design-system-mcp-server',
-            version: '1.0.0',
+            version: PKG_VERSION,
         }, {
             capabilities: {
                 tools: {},
