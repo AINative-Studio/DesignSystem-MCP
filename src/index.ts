@@ -11,6 +11,7 @@
  * Usage: ainative-design-system-mcp
  */
 
+import { createRequire } from 'module';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
@@ -27,6 +28,9 @@ import { designSystemResources } from './resources.js';
 import { validateToolInput } from './utils/validation.js';
 import { logger } from './utils/logger.js';
 
+const require = createRequire(import.meta.url);
+const { version: PKG_VERSION } = require('../package.json');
+
 class DesignSystemServer {
   private server: Server;
 
@@ -34,7 +38,7 @@ class DesignSystemServer {
     this.server = new Server(
       {
         name: 'ainative-design-system-mcp-server',
-        version: '1.0.0',
+        version: PKG_VERSION,
       },
       {
         capabilities: {
